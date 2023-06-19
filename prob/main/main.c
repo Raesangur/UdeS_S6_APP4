@@ -13,8 +13,8 @@
 
 void app_main()
 {
-    // setup_timer(1);
-    // setup_gpio();
+    setup_timer(100);
+    setup_gpio();
 
     // xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
 
@@ -25,9 +25,9 @@ void app_main()
     while(true)
     {
         vTaskDelay(pdMS_TO_TICKS(100));
-        if(has_serial_reception())
-        {
-            printf("%s", get_serial_buffer());
-        }
+        //if(has_serial_reception())
+        //{
+        //    printf("%s", get_serial_buffer());
+        //}
     }
 }

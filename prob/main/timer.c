@@ -4,14 +4,13 @@
 
 static void timer_callback(void* param)
 {
-    printf("Bon matin\n");
     transmitBit();
 }
 
 
 void setup_timer(uint32_t baudrate)
 {
-    const uint32_t timer_us = (1.0 / baudrate) * 1000000 * 2;
+    const uint32_t timer_us = (1.0 / baudrate) * 1000000 / 2;
 
     const esp_timer_create_args_t timer_args = {.callback = &timer_callback,
                                                 .name     = "Manchester timer"};

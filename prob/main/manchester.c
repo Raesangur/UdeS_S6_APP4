@@ -11,11 +11,11 @@ bool transmissionComplete = true;
 
 void transmitBit()
 {
-    if(!currentDataPointer || endDataPointer)
+    if(!currentDataPointer || !endDataPointer)
     {
         currentDataPointer   = get_tx_data_buffer();
         endDataPointer       = get_tx_data_buffer_end();
-        transmissionComplete = true;
+        printf("Writing message %s\n", currentDataPointer);
     }
     else
     {
@@ -37,23 +37,26 @@ void transmitBit()
                 currentDataPointer   = NULL;
                 endDataPointer       = NULL;
                 transmissionComplete = true;
+                printf("Transmission Complete!\n");
             }
             else
             {
+                printf("Sending new data pair - %c\n", *currentDataPointer);
                 if(*currentDataPointer == '0')
                 {
                     set_tx_gpio();
-                    nextByte = '0';
+                    nextByte = '1';
                 }
                 else if(*currentDataPointer == '1')
                 {
                     clear_tx_gpio();
-                    nextByte = '1';
+                    nextByte = '0';
                 }
                 else
                 {
                     nextByte = '\0';
                 }
+                currentDataPointer++;
             }
         }
     }

@@ -200,6 +200,7 @@ int receive_message(char* input)
         k += data_size * 8;
 
         uint16_t crc = gen_crc16(rx_message, data_size);
+        char crc_sequence[17] = {'\0'};
         for(int i = 0; i < 16; i++)
         {
             crc_sequence[15 - i] = ((crc & (1 << i)) >> i) ? '1' : '0';
