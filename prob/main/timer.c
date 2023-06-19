@@ -1,9 +1,11 @@
 #include "globaldef.h"
+#include "manchester.h"
 
 
 static void timer_callback(void* param)
 {
     printf("Bon matin\n");
+    transmitBit();
 }
 
 

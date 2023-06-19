@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "APP4",
-    "project_version":    "5d4beb6-dirty",
+    "project_version":    "b13b602-dirty",
     "project_path":       "/home/raesangur/github/UdeS_S6_APP4/prob",
     "idf_path":           "/home/raesangur/esp/esp-idf",
     "build_dir":          "/home/raesangur/github/UdeS_S6_APP4/prob/build",
@@ -805,7 +805,7 @@
             "managed_reqs": [],
             "managed_priv_reqs": [],
             "file": "/home/raesangur/github/UdeS_S6_APP4/prob/build/esp-idf/main/libmain.a",
-            "sources": [ "/home/raesangur/github/UdeS_S6_APP4/prob/main/main.c", "/home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c", "/home/raesangur/github/UdeS_S6_APP4/prob/main/serial_reception.c" ],
+            "sources": [ "/home/raesangur/github/UdeS_S6_APP4/prob/main/main.c", "/home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c", "/home/raesangur/github/UdeS_S6_APP4/prob/main/serial_reception.c", "/home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c", "/home/raesangur/github/UdeS_S6_APP4/prob/main/gpio.c" ],
             "include_dirs": []
         },
         "mbedtls": {
