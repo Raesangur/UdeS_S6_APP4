@@ -6,11 +6,11 @@ uint16_t rx_pin = 3;
 
 void setup_gpio()
 {
-    gpio_pad_select_gpio(tx_pin);
+    esp_rom_gpio_pad_select_gpio(tx_pin);
     gpio_set_direction(tx_pin, GPIO_MODE_OUTPUT);
 
-    gpio_pad_select_gpio(INPUT_PIN);
-    gpio_set_direction(INPUT_PIN, GPIO_MODE_INPUT);
+    esp_rom_gpio_pad_select_gpio(rx_pin);
+    gpio_set_direction(rx_pin, GPIO_MODE_INPUT);
 }
 
 void set_tx_gpio()

@@ -1,5 +1,6 @@
 #include "globaldef.h"
 #include "gpio.h"
+#include "message.h"
 
 
 char* currentDataPointer = NULL;
