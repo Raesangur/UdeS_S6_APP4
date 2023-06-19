@@ -138,7 +138,6 @@ int receive_message(char* input)
         temp[8] = '\0';
         if(strcmp(temp, "01010101"))
         {
-            printf("oh no preamb - %s\n", temp);
             return -1;
         }
 
@@ -150,7 +149,6 @@ int receive_message(char* input)
         }
         if(strcmp(temp,"01111110"))
         {
-            printf("oh no start\n");
             return -1;
         }
         k += 8;
@@ -160,7 +158,6 @@ int receive_message(char* input)
         }
         if(strcmp(temp, "00000000"))
         {
-            printf("oh no flags\n");
             return -1;
         }
         k += 8;
@@ -169,7 +166,6 @@ int receive_message(char* input)
         {
             if(input[k + i] == '0')
             {
-                //data_size &= 0 << (7 - i);
             }
             else if(input[k + i] == '1')
             {
@@ -177,7 +173,6 @@ int receive_message(char* input)
             }
             else
             {
-                printf("oh no data size\n");
                 return -1;
             }
         }
@@ -189,7 +184,6 @@ int receive_message(char* input)
             {
                 if(input[k + (i * 8) + j] == '0')
                 {
-                    //unit &= 0 << (7 - i);
                 }
                 else if(input[k + (i * 8) + j] == '1')
                 {
@@ -197,7 +191,6 @@ int receive_message(char* input)
                 }
                 else
                 {
-                    printf("oh no data\n");
                     return -1;
                 }
             }
@@ -207,20 +200,16 @@ int receive_message(char* input)
         k += data_size * 8;
 
         uint16_t crc = gen_crc16(rx_message, data_size);
-        printf("%s - %d - %d\n", rx_message, crc, data_size);
-        char crc_sequence[17] = {'\0'};
         for(int i = 0; i < 16; i++)
         {
             crc_sequence[15 - i] = ((crc & (1 << i)) >> i) ? '1' : '0';
         }
-        printf("%s\n", crc_sequence);
 
         for(int i = 0; i < 16; i++)
         {
             printf("%c\n", input[i + k]);
             if(input[i + k] != crc_sequence[i])
             {
-                printf("oh no crc\n");
                 return -1;
             }
         }
@@ -231,7 +220,6 @@ int receive_message(char* input)
         }
         if(strcmp(temp, "01111110"))
         {
-            printf("oh no end\n");
             return -1;
         }
 
@@ -242,7 +230,6 @@ int receive_message(char* input)
         rx_ready = 1;
         return 0;
     }
-    printf("big oh no\n");
     return -1;
 }
 
