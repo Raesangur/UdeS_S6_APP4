@@ -9,7 +9,7 @@
 /home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/flash.dir
 /home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/encrypted-flash.dir
 /home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/_project_elf_src.dir
-/home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/hello_world.elf.dir
+/home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/APP4.elf.dir
 /home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/size.dir
 /home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/size-files.dir
 /home/raesangur/github/UdeS_S6_APP4/prob/build/CMakeFiles/size-components.dir
