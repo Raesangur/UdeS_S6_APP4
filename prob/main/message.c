@@ -10,6 +10,7 @@ char* rx_message_begin;
 char* rx_message_end;
 bool  rx_ready;
 
+
 #define CRC16 0x8005
 
 static uint16_t gen_crc16(const char* data, uint16_t size)
@@ -60,125 +61,157 @@ void create_message(char* input)
     }
 
 
+    // Preamble
     while(k < 8)
     {
         message[k] = (k % 2 == 0) ? '0' : '1';
         k++;
     }
-    message[k] = '0';
-    k++;
+
+    // Start byte
+    message[k++] = '0';
     while(k < 15)
     {
-        message[k] = '1';
-        k++;
+        message[k++] = '1';
     }
-    message[k] = '0';
-    k++;
+    message[k++] = '0';
+
+    // Type + flags
     while(k < 24)
     {
-        message[k] = '0';
-        k++;
+        message[k++] = '0';
     }
+
+    // Data size
+    k += 8;
     for(int i = 0; i < 8; i++)
     {
-        message[k] = ((data_size & (1 << i)) >> i) ? '1' : '0';
-        k++;
+        message[--k] = ((data_size & (1 << i)) >> i) ? '1' : '0';
     }
+    k += 8;
+
+    // Data
     for(int i = 0; i < data_size * 8; i++)
     {
-        message[k] = data[i];
-        k++;
+        if(!(i % 8))
+            k += 8;
+        message[--k] = data[i];
     }
+    k += 8;
+
+    // CRC
     uint16_t crc = gen_crc16(input, data_size);
     for(int i = 0; i < 16; i++)
     {
-        message[k] = ((crc & (1 << i)) >> i) ? '1' : '0';
-        k++;
+        message[k++] = ((crc & (1 << i)) >> i) ? '1' : '0';
     }
-    message[k] = '0';
-    k++;
+
+    // End byte
+    message[k++] = '0';
     for(int i = 0; i < 6; i++)
     {
-        message[k] = '1';
-        k++;
+        message[k++] = '1';
     }
-    tx_message[k]    = '0';
+    tx_message[k++]    = '0';
+    tx_message[k] = '\0';
     tx_message_begin = tx_message;
     tx_message_end   = tx_message + k;
-    ready         = 1;
+    tx_ready         = true;
 }
 
-int recieve_message(char *input)
+int recieve_message(char* input)
 {
-    int k = 0;
+    int     k            = 0;
     uint8_t message_size = strlen(input);
-    while(k<message_size)
+    while(k < message_size)
     {
         char temp[8];
-        for(int i=0; i<8; i++)
+        for(int i = 0; i < 8; i++)
         {
-            temp[i]=input[k+i];
+            temp[i] = input[k + i];
         }
         if(!strcmp(temp,"01010101"))
         {
             return -1;
         }
-        k+=8;
-        for(int i=0; i<8; i++)
+        k += 8;
+        for(int i = 0; i < 8; i++)
         {
-            temp[i]=input[k+i];
+            temp[i] = input[k + i];
         }
         if(!strcmp(temp,"01111110"))
         {
             return -1;
         }
-        k+=8;
-        for(int i=0; i<8; i++)
+        k += 8;
+        for(int i = 0; i < 8; i++)
         {
-            temp[i]=input[k+i];
+            temp[i] = input[k + i];
         }
-        if(temp != "00000000")
+        if(!strcmp(temp, "00000000"))
         {
             return -1;
         }
-        k+=8;
+        k += 8;
         uint8_t data_size = 0;
-        for(int i=0; i<8; i++)
+        for(int i = 0; i < 8; i++)
         {
-            if(input[k+i] == '0'){data_size &= 0 << (7-i);}
-            else if(input[k+i] == '1'){data_size |= 1 << (7-i);}
-            else{return -1;}
+            if(input[k + i] == '0')
+            {
+                data_size &= 0 << (7 - i);
+            }
+            else if(input[k + i] == '1')
+            {
+                data_size |= 1 << (7 - i);
+            }
+            else
+            {
+                return -1;
+            }
         }
-        k+=8;
-        char data[data_size]
-        for(int i=0; i<data_size; i++)
+        k += 8;
+        char data[data_size];
+        for(int i = 0; i < data_size; i++)
         {
             char unit = 0;
-            for(int j=0; j<8; j++)
+            for(int j = 0; j < 8; j++)
             {
-                if(input[k+(i*8)+j] == '0'){unit &= 0 << (7-i);}
-                else if(input[k+(i*8)+j] == '1'){data_size |= 1 << (7-i);}
-                else{return -1;}
+                if(input[k + (i * 8) + j] == '0')
+                {
+                    unit &= 0 << (7 - i);
+                }
+                else if(input[k + (i * 8) + j] == '1')
+                {
+                    data_size |= 1 << (7 - i);
+                }
+                else
+                {
+                    return -1;
+                }
             }
 
-            data[i]=unit;
+            data[i] = unit;
         }
-        k+=data_size;
-        
+        k += data_size;
+
         uint16_t crc = gen_crc16(input, data_size);
-        for(int i=0; i<16; i++)
+        for(int i = 0; i < 16; i++)
         {
-            if( input[i+k]!=((crc & (1 << i)) >> i) ? '1' : '0')){return -1;}
+            if(input[i + k] != (((crc & (1 << i)) >> i) ? '1' : '0'))
+            {
+                return -1;
+            }
         }
-        k+=16;
-        for(int i=0; i<8; i++)
+        k += 16;
+        for(int i = 0; i < 8; i++)
         {
-            temp[i]=input[k+i];
+            temp[i] = input[k + i];
         }
-        if(temp != "01111110")
+        if(!strcmp(temp, "01111110"))
         {
             return -1;
         }
+
 
         rx_message = data;
         rx_message_begin = rx_message;
@@ -186,8 +219,8 @@ int recieve_message(char *input)
     
         rx_ready = 1;
         return 0;
-        
     }
+    return -1;
 }
 
 char* get_tx_data_buffer()
