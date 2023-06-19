@@ -9,7 +9,7 @@
 
 void app_main()
 {
-    timer_init(1);
+    setup_timer(1);
     
     while(true)
     {

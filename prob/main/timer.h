@@ -2,4 +2,4 @@
 
 #include "globaldef.h"
 
-void timer_init(uint32_t);
+void setup_timer(uint32_t);
