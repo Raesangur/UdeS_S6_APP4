@@ -1,0 +1,217 @@
+[0;33m--- idf_monitor on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40081652: panic_abort at /home/raesangur/esp/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40085915: esp_system_abort at /home/raesangur/esp/esp-idf/components/esp_system/port/esp_system_chip.c:90
+[0m
+[0;33m0x4008a9ba: abort at /home/raesangur/esp/esp-idf/components/newlib/abort.c:38
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40082719: _lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x40082792: __retarget_lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:314
+[0m
+[0;33m0x400d9be6: _puts_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:89 (discriminator 2)
+[0m
+[0;33m0x400d9c33: puts at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:129
+[0m
+[0;33m0x400d5614: receiveBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:93
+[0m
+[0;33m0x40082c0f: gpio_interrupt_handler at /home/raesangur/github/UdeS_S6_APP4/prob/main/gpio.c:10
+[0m
+[0;33m0x400831d2: gpio_isr_loop at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:462
+[0m
+[0;33m0x40083262: gpio_intr_service at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:484
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5522: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:34
+[0m
+[0;33m0x400d5433: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d37f5: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3841: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40081652: panic_abort at /home/raesangur/esp/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40085915: esp_system_abort at /home/raesangur/esp/esp-idf/components/esp_system/port/esp_system_chip.c:90
+[0m
+[0;33m0x4008a9ba: abort at /home/raesangur/esp/esp-idf/components/newlib/abort.c:38
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40082719: _lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x40082792: __retarget_lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:314
+[0m
+[0;33m0x400d9be6: _puts_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:89 (discriminator 2)
+[0m
+[0;33m0x400d9c33: puts at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:129
+[0m
+[0;33m0x400d5614: receiveBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:93
+[0m
+[0;33m0x40082c0f: gpio_interrupt_handler at /home/raesangur/github/UdeS_S6_APP4/prob/main/gpio.c:10
+[0m
+[0;33m0x400831d2: gpio_isr_loop at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:462
+[0m
+[0;33m0x40083262: gpio_intr_service at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:484
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5522: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:34
+[0m
+[0;33m0x400d5433: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d37f5: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3841: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40081652: panic_abort at /home/raesangur/esp/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40085915: esp_system_abort at /home/raesangur/esp/esp-idf/components/esp_system/port/esp_system_chip.c:90
+[0m
+[0;33m0x4008a9ba: abort at /home/raesangur/esp/esp-idf/components/newlib/abort.c:38
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40082719: _lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x40082792: __retarget_lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:314
+[0m
+[0;33m0x400d9be6: _puts_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:89 (discriminator 2)
+[0m
+[0;33m0x400d9c33: puts at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:129
+[0m
+[0;33m0x400d5614: receiveBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:93
+[0m
+[0;33m0x40082c0f: gpio_interrupt_handler at /home/raesangur/github/UdeS_S6_APP4/prob/main/gpio.c:10
+[0m
+[0;33m0x400831d2: gpio_isr_loop at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:462
+[0m
+[0;33m0x40083262: gpio_intr_service at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:484
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5522: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:34
+[0m
+[0;33m0x400d5433: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d37f5: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3841: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40081652: panic_abort at /home/raesangur/esp/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40085915: esp_system_abort at /home/raesangur/esp/esp-idf/components/esp_system/port/esp_system_chip.c:90
+[0m
+[0;33m0x4008a9ba: abort at /home/raesangur/esp/esp-idf/components/newlib/abort.c:38
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40082719: _lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x40082792: __retarget_lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:314
+[0m
+[0;33m0x400d9be6: _puts_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:89 (discriminator 2)
+[0m
+[0;33m0x400d9c33: puts at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:129
+[0m
+[0;33m0x400d5614: receiveBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:93
+[0m
+[0;33m0x40082c0f: gpio_interrupt_handler at /home/raesangur/github/UdeS_S6_APP4/prob/main/gpio.c:10
+[0m
+[0;33m0x400831d2: gpio_isr_loop at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:462
+[0m
+[0;33m0x40083262: gpio_intr_service at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:484
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5522: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:34
+[0m
+[0;33m0x400d5433: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d37f5: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3841: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40081652: panic_abort at /home/raesangur/esp/esp-idf/components/esp_system/panic.c:452
+[0m
+[0;33m0x40085915: esp_system_abort at /home/raesangur/esp/esp-idf/components/esp_system/port/esp_system_chip.c:90
+[0m
+[0;33m0x4008a9ba: abort at /home/raesangur/esp/esp-idf/components/newlib/abort.c:38
+[0m
+[0;33m0x400825db: lock_acquire_generic at /home/raesangur/esp/esp-idf/components/newlib/locks.c:130
+[0m
+[0;33m0x40082719: _lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:158
+[0m
+[0;33m0x40082792: __retarget_lock_acquire_recursive at /home/raesangur/esp/esp-idf/components/newlib/locks.c:314
+[0m
+[0;33m0x400d9be6: _puts_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:89 (discriminator 2)
+[0m
+[0;33m0x400d9c33: puts at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:129
+[0m
+[0;33m0x400d5614: receiveBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:93
+[0m
+[0;33m0x40082c0f: gpio_interrupt_handler at /home/raesangur/github/UdeS_S6_APP4/prob/main/gpio.c:10
+[0m
+[0;33m0x400831d2: gpio_isr_loop at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:462
+[0m
+[0;33m0x40083262: gpio_intr_service at /home/raesangur/esp/esp-idf/components/driver/gpio/gpio.c:484
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5522: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:34
+[0m
+[0;33m0x400d5433: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d37f5: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3841: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0m

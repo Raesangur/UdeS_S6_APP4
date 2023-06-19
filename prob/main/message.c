@@ -102,7 +102,6 @@ void create_message(char* input)
 
     // CRC
     uint16_t crc = gen_crc16(input, data_size);
-    printf("%s - %d\n", input, crc);
     k += 16;
     for(int i = 0; i < 16; i++)
     {
@@ -208,7 +207,6 @@ int receive_message(char* input)
 
         for(int i = 0; i < 16; i++)
         {
-            printf("%c\n", input[i + k]);
             if(input[i + k] != crc_sequence[i])
             {
                 return -1;
@@ -251,6 +249,18 @@ char* get_tx_data_buffer_end()
     if(tx_ready)
     {
         return tx_message_end;
+    }
+    else
+    {
+        return NULL;
+    }
+}
+
+char* get_rx_data_buffer()
+{
+    if (rx_ready)
+    {
+        return rx_message_begin;
     }
     else
     {

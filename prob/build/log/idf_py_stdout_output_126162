@@ -1,0 +1,119 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7132
+ho 0 tail 12 room 4
+load:0x40078000,len:15672
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (33) boot: ESP-IDF v5.2-dev-1115-g3a45d4e949 2nd stage bootloader[0m
+[0;32mI (33) boot: compile time Jun 19 2023 18:03:58[0m
+[0;32mI (35) boot: Multicore bootloader[0m
+[0;32mI (39) boot: chip revision: v3.0[0m
+[0;32mI (43) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (47) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (52) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (56) boot: Enabling RNG early entropy source...[0m
+[0;32mI (62) boot: Partition Table:[0m
+[0;32mI (65) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (73) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (80) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (88) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (95) boot: End of partition table[0m
+[0;32mI (99) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=09a58h ( 39512) map[0m
+[0;32mI (122) esp_image: segment 1: paddr=00019a80 vaddr=3ffb0000 size=02148h (  8520) load[0m
+[0;32mI (126) esp_image: segment 2: paddr=0001bbd0 vaddr=40080000 size=04448h ( 17480) load[0m
+[0;32mI (135) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=14fach ( 85932) map[0m
+[0;32mI (167) esp_image: segment 4: paddr=00034fd4 vaddr=40084448 size=07b70h ( 31600) load[0m
+[0;32mI (187) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (187) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (199) cpu_start: Pro cpu up.[0m
+[0;32mI (199) cpu_start: Starting app cpu, entry point is 0x40081014[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (217) cpu_start: Pro cpu start user code[0m
+[0;32mI (217) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (217) cpu_start: Application information:[0m
+[0;32mI (221) cpu_start: Project name:     APP4[0m
+[0;32mI (226) cpu_start: App version:      91f9ff1-dirty[0m
+[0;32mI (232) cpu_start: Compile time:     Jun 19 2023 18:03:56[0m
+[0;32mI (238) cpu_start: ELF file SHA256:  5d522df26...[0m
+[0;32mI (243) cpu_start: ESP-IDF:          v5.2-dev-1115-g3a45d4e949[0m
+[0;32mI (250) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (254) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (259) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (264) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (271) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (277) heap_init: At 3FFB2CD0 len 0002D330 (180 KiB): DRAM[0m
+[0;32mI (283) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (290) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (296) heap_init: At 4008BFB8 len 00014048 (80 KiB): IRAM[0m
+[0;32mI (304) spi_flash: detected chip: generic[0m
+[0;32mI (307) spi_flash: flash io: dio[0m
+[0;33mW (311) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (325) app_start: Starting scheduler on CPU0[0m
+[0;32mI (329) app_start: Starting scheduler on CPU1[0m
+[0;32mI (329) main_task: Started on CPU0[0m
+[0;32mI (339) main_task: Calling app_main()[0m
+0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+Transmission Complete!
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+Transmission Complete!
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+Transmission Complete!
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+0
+01
+011
+0111
+01111
+011110
+0111100
+01111000
+011110001
+0111100011
+01111000111
+011110001110
+0111100011101
+01111000111011
+011110001110111
+0111100011101110
+01111000111011100
+011110001110111000
+0111100011101110000
+01111000111011100000
+011110001110111000000
+0111100011101110000001
+[0;31mE (5339) task_wdt: Task watchdog got triggered. The following tasks/users did not reset the watchdog in time:[0m
+[0;31mE (5339) task_wdt:  - IDLE (CPU 0)[0m
+[0;31mE (5339) task_wdt: Tasks currently running:[0m
+[0;31mE (5339) task_wdt: CPU 0: main[0m
+[0;31mE (5339) task_wdt: CPU 1: IDLE[0m
+[0;31mE (5339) task_wdt: Print CPU 0 (current core) backtrace[0m
+
+
+Backtrace: 0x400D8037:0x3FFB0D10 0x400D81BE:0x3FFB0D30 0x40082EE1:0x3FFB0D50 0x400D5427:0x3FFB4CD0 0x400D5290:0x3FFB4CF0 0x400E47B4:0x3FFB4FD0 0x40087D39:0x3FFB5000
+
+Transmission Complete!
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+01111000111011100000011
+011110001110111000000110
+0111100011101110000001100
+01111000111011100000011000
+011110001110111000000110000
+0111100011101110000001100000
+01111000111011100000011000000
+011110001110111000000110000000
+0111100011101110000001100000001
+01111000111011100000011000000011
+011110001110111000000110000000110
+Transmission Complete!
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110
+Transmission Complete!
+Writing message 0101010101111110000000000000101001000010011011110110111000100000011011010110000101110100011010010110111000100001101000111101100101111110

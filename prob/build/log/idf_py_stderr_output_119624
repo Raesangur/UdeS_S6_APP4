@@ -1,0 +1,66 @@
+[0;33m--- idf_monitor on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x4008101c: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400d7df3: task_wdt_timeout_handling at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x400d7f7a: task_wdt_isr at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5582: get_and_clear_reception_byte at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:72
+[0m
+[0;33m0x400d53e8: app_main at /home/raesangur/github/UdeS_S6_APP4/prob/main/main.c:36
+[0m
+[0;33m0x400e4570: main_task at /home/raesangur/esp/esp-idf/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x400d7df3: task_wdt_timeout_handling at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x400d7f7a: task_wdt_isr at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d5587: get_and_clear_reception_byte at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:73
+[0m
+[0;33m0x400d53e8: app_main at /home/raesangur/github/UdeS_S6_APP4/prob/main/main.c:36
+[0m
+[0;33m0x400e4570: main_task at /home/raesangur/esp/esp-idf/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x400d7df3: task_wdt_timeout_handling at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x400d7f7a: task_wdt_isr at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40082f81: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d4bc7: uart_ll_get_txfifo_len at /home/raesangur/esp/esp-idf/components/hal/esp32/include/hal/uart_ll.h:313 (discriminator 1)
+ (inlined by) uart_tx_char at /home/raesangur/esp/esp-idf/components/vfs/vfs_uart.c:156 (discriminator 1)
+[0m
+[0;33m0x400d5397: uart_write at /home/raesangur/esp/esp-idf/components/vfs/vfs_uart.c:209
+[0m
+[0;33m0x400d425b: console_write at /home/raesangur/esp/esp-idf/components/vfs/vfs_console.c:73
+[0m
+[0;33m0x400d3e22: esp_vfs_write at /home/raesangur/esp/esp-idf/components/vfs/vfs.c:445 (discriminator 4)
+[0m
+[0;33m0x4000bd83: _write_r in ROM
+[0m
+[0;33m0x4000117d: __swrite in ROM
+[0m
+[0;33m0x400d9933: __sfvwrite_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/fvwrite.c:237
+[0m
+[0;33m0x400d9bc3: _puts_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:91
+[0m
+[0;33m0x400d9c03: puts at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/puts.c:129
+[0m
+[0;33m0x400d53f7: app_main at /home/raesangur/github/UdeS_S6_APP4/prob/main/main.c:40
+[0m
+[0;33m0x400e4570: main_task at /home/raesangur/esp/esp-idf/components/freertos/app_startup.c:208 (discriminator 13)
+[0m
+[0;33m0x40087db1: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0m

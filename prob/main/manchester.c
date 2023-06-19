@@ -6,8 +6,11 @@
 char* currentDataPointer = NULL;
 char* endDataPointer     = NULL;
 char  nextByte           = '\0';
+char  previousByte       = '\0';
 
 bool transmissionComplete = true;
+char receptionByte = '\0';
+
 
 void transmitBit()
 {
@@ -41,14 +44,15 @@ void transmitBit()
             }
             else
             {
-                printf("Sending new data pair - %c\n", *currentDataPointer);
                 if(*currentDataPointer == '0')
                 {
+                   // printf("sending 0\n");
                     set_tx_gpio();
                     nextByte = '1';
                 }
                 else if(*currentDataPointer == '1')
                 {
+                    //printf("sending 1\n");
                     clear_tx_gpio();
                     nextByte = '0';
                 }
@@ -59,5 +63,37 @@ void transmitBit()
                 currentDataPointer++;
             }
         }
+    }
+}
+
+
+char get_and_clear_reception_byte()
+{
+    char byte = receptionByte;
+    receptionByte = '\0';
+    return byte;
+}
+
+void receiveBit()
+{
+    if (previousByte != '0' && previousByte != '1')
+    {
+        previousByte = read_rx_gpio() ? '1' : '0';
+    }
+    else
+    {
+        char currentByte = read_rx_gpio() ? '1' : '0';
+        if (previousByte == '0' && currentByte == '1')
+        {
+            //printf("received 1\n");
+            receptionByte = '1';
+        }
+        else if (previousByte == '1' && currentByte == '0')
+        {
+            //printf("received 0\n");
+            receptionByte = '0';
+        }
+
+        previousByte = '\0';
     }
 }
