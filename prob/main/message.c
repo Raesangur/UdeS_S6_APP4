@@ -1,9 +1,14 @@
 #include "globaldef.h"
 
-char  message[696];
-char* message_begin;
-char* message_end;
-bool  ready;
+char  tx_message[696];
+char* tx_message_begin;
+char* tx_message_end;
+bool  tx_ready;
+
+char  rx_message[80];
+char* rx_message_begin;
+char* rx_message_end;
+bool  rx_ready;
 
 #define CRC16 0x8005
 
@@ -97,9 +102,9 @@ void create_message(char* input)
         message[k] = '1';
         k++;
     }
-    message[k]    = '0';
-    message_begin = message;
-    message_end   = message + k;
+    tx_message[k]    = '0';
+    tx_message_begin = tx_message;
+    tx_message_end   = tx_message + k;
     ready         = 1;
 }
 
@@ -114,7 +119,7 @@ int recieve_message(char *input)
         {
             temp[i]=input[k+i];
         }
-        if(!strcomp(temp,"01010101"))
+        if(!strcmp(temp,"01010101"))
         {
             return -1;
         }
@@ -123,7 +128,7 @@ int recieve_message(char *input)
         {
             temp[i]=input[k+i];
         }
-        if(!strcomp(temp,"01111110"))
+        if(!strcmp(temp,"01111110"))
         {
             return -1;
         }
@@ -174,6 +179,13 @@ int recieve_message(char *input)
         {
             return -1;
         }
+
+        rx_message = data;
+        rx_message_begin = rx_message;
+        rx_message_end   = rx_message + data_size;
+    
+        rx_ready = 1;
+        return 0;
         
     }
 }
