@@ -1,9 +1,9 @@
 #include "globaldef.h"
 
-char  message[696];
-char* message_begin;
-char* message_end;
-bool  ready;
+static char message[696];
+char*       message_begin;
+char*       message_end;
+bool        ready;
 
 #define CRC16 0x8005
 
@@ -55,52 +55,64 @@ void create_message(char* input)
     }
 
 
+    // Preamble
     while(k < 8)
     {
         message[k] = (k % 2 == 0) ? '0' : '1';
         k++;
     }
-    message[k] = '0';
-    k++;
+
+    // Start byte
+    message[k++] = '0';
     while(k < 15)
     {
-        message[k] = '1';
-        k++;
+        message[k++] = '1';
     }
-    message[k] = '0';
-    k++;
+    message[k++] = '0';
+
+    // Type + flags
     while(k < 24)
     {
-        message[k] = '0';
-        k++;
+        message[k++] = '0';
     }
+
+    // Data size
+    k += 8;
     for(int i = 0; i < 8; i++)
     {
-        message[k] = ((data_size & (1 << i)) >> i) ? '1' : '0';
-        k++;
+        message[--k] = ((data_size & (1 << i)) >> i) ? '1' : '0';
     }
+    k += 8;
+
+    // Data
+    k += data_size * 8;
     for(int i = 0; i < data_size * 8; i++)
     {
-        message[k] = data[i];
-        k++;
+        message[--k] = data[i];
     }
+    k += data_size * 8;
+
+    // CRC
     uint16_t crc = gen_crc16(input, data_size);
     for(int i = 0; i < 16; i++)
     {
-        message[k] = ((crc & (1 << i)) >> i) ? '1' : '0';
-        k++;
+        message[k++] = ((crc & (1 << i)) >> i) ? '1' : '0';
     }
-    message[k] = '0';
-    k++;
+
+    // End byte
+    message[k++] = '0';
     for(int i = 0; i < 6; i++)
     {
-        message[k] = '1';
-        k++;
+        message[k++] = '1';
     }
-    message[k]    = '0';
+    message[k++] = '0';
+
+    message[k] = '\0';
+
+
     message_begin = message;
     message_end   = message + k;
-    ready         = 1;
+    ready         = true;
 }
 
 char* get_tx_data_buffer()

@@ -6,16 +6,20 @@
 
 #include "globaldef.h"
 #include "gpio.h"
+#include "message.h"
 #include "serial_reception.h"
 #include "timer.h"
 
 
 void app_main()
 {
-    setup_timer(1);
-    setup_gpio();
+    // setup_timer(1);
+    // setup_gpio();
 
-    xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
+    // xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
+
+    create_message("!nitam noB");
+    printf("%s\n", get_tx_data_buffer());
 
     while(true)
     {
