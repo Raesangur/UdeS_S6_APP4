@@ -115,6 +115,81 @@ void create_message(char* input)
     ready         = true;
 }
 
+int recieve_message(char *input)
+{
+    int k = 0;
+    uint8_t message_size = strlen(input);
+    while(k<message_size)
+    {
+        char temp[8];
+        for(int i=0; i<8; i++)
+        {
+            temp[i]=input[k+i];
+        }
+        if(!strcomp(temp,"01010101"))
+        {
+            return -1;
+        }
+        k+=8;
+        for(int i=0; i<8; i++)
+        {
+            temp[i]=input[k+i];
+        }
+        if(!strcomp(temp,"01111110"))
+        {
+            return -1;
+        }
+        k+=8;
+        for(int i=0; i<8; i++)
+        {
+            temp[i]=input[k+i];
+        }
+        if(temp != "00000000")
+        {
+            return -1;
+        }
+        k+=8;
+        uint8_t data_size = 0;
+        for(int i=0; i<8; i++)
+        {
+            if(input[k+i] == '0'){data_size &= 0 << (7-i);}
+            else if(input[k+i] == '1'){data_size |= 1 << (7-i);}
+            else{return -1;}
+        }
+        k+=8;
+        char data[data_size]
+        for(int i=0; i<data_size; i++)
+        {
+            char unit = 0;
+            for(int j=0; j<8; j++)
+            {
+                if(input[k+(i*8)+j] == '0'){unit &= 0 << (7-i);}
+                else if(input[k+(i*8)+j] == '1'){data_size |= 1 << (7-i);}
+                else{return -1;}
+            }
+
+            data[i]=unit;
+        }
+        k+=data_size;
+        
+        uint16_t crc = gen_crc16(input, data_size);
+        for(int i=0; i<16; i++)
+        {
+            if( input[i+k]!=((crc & (1 << i)) >> i) ? '1' : '0')){return -1;}
+        }
+        k+=16;
+        for(int i=0; i<8; i++)
+        {
+            temp[i]=input[k+i];
+        }
+        if(temp != "01111110")
+        {
+            return -1;
+        }
+        
+    }
+}
+
 char* get_tx_data_buffer()
 {
     if(ready)
