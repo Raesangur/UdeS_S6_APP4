@@ -1,0 +1,2087 @@
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:7132
+ho 0 tail 12 room 4
+load:0x40078000,len:15672
+ho 0 tail 12 room 4
+load:0x40080400,len:4
+load:0x40080404,len:3884
+entry 0x40080650
+[0;32mI (33) boot: ESP-IDF v5.2-dev-1115-g3a45d4e949 2nd stage bootloader[0m
+[0;32mI (33) boot: compile time Jun 16 2023 14:30:12[0m
+[0;32mI (35) boot: Multicore bootloader[0m
+[0;32mI (39) boot: chip revision: v3.0[0m
+[0;32mI (43) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (47) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (52) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (56) boot: Enabling RNG early entropy source...[0m
+[0;32mI (62) boot: Partition Table:[0m
+[0;32mI (65) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (73) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (80) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (88) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (95) boot: End of partition table[0m
+[0;32mI (99) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=093f8h ( 37880) map[0m
+[0;32mI (121) esp_image: segment 1: paddr=00019420 vaddr=3ffb0000 size=02110h (  8464) load[0m
+[0;32mI (125) esp_image: segment 2: paddr=0001b538 vaddr=40080000 size=04ae0h ( 19168) load[0m
+[0;32mI (135) esp_image: segment 3: paddr=00020020 vaddr=400d0020 size=170d0h ( 94416) map[0m
+[0;32mI (170) esp_image: segment 4: paddr=000370f8 vaddr=40084ae0 size=07630h ( 30256) load[0m
+[0;32mI (189) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (189) boot: Disabling RNG early entropy source...[0m
+[0;32mI (200) cpu_start: Multicore app[0m
+[0;32mI (201) cpu_start: Pro cpu up.[0m
+[0;32mI (201) cpu_start: Starting app cpu, entry point is 0x40081030[0m
+[0;32mI (0) cpu_start: App cpu up.[0m
+[0;32mI (219) cpu_start: Pro cpu start user code[0m
+[0;32mI (219) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (219) cpu_start: Application information:[0m
+[0;32mI (223) cpu_start: Project name:     real_time_stats[0m
+[0;32mI (229) cpu_start: App version:      1[0m
+[0;32mI (233) cpu_start: Compile time:     Jun 16 2023 14:30:06[0m
+[0;32mI (240) cpu_start: ELF file SHA256:  bcf798fd1...[0m
+[0;32mI (245) cpu_start: ESP-IDF:          v5.2-dev-1115-g3a45d4e949[0m
+[0;32mI (251) cpu_start: Min chip rev:     v0.0[0m
+[0;32mI (256) cpu_start: Max chip rev:     v3.99 [0m
+[0;32mI (261) cpu_start: Chip rev:         v3.0[0m
+[0;32mI (266) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (273) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (279) heap_init: At 3FFB2A00 len 0002D600 (181 KiB): DRAM[0m
+[0;32mI (285) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (292) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (298) heap_init: At 4008C110 len 00013EF0 (79 KiB): IRAM[0m
+[0;32mI (306) spi_flash: detected chip: generic[0m
+[0;32mI (309) spi_flash: flash io: dio[0m
+[0;33mW (313) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (327) app_start: Starting scheduler on CPU0[0m
+[0;32mI (331) app_start: Starting scheduler on CPU1[0m
+[0;32mI (331) main_task: Started on CPU0[0m
+[0;32mI (341) main_task: Calling app_main()[0m
+
+
+Getting real time stats over 100 ticks
+[0;32mI (521) main_task: Returned from app_main()[0m
+| Task | Run Time | Percentage
+| stats | 1065 | 0%
+| spin2 | 225375 | 11%
+| spin1 | 225386 | 11%
+| spin3 | 197267 | 9%
+| spin4 | 197300 | 9%
+| spin5 | 197197 | 9%
+| spin0 | 197235 | 9%
+| IDLE | 421517 | 21%
+| IDLE | 330878 | 16%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| main | Deleted
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 855 | 0%
+| IDLE | 349216 | 17%
+| IDLE | 297521 | 14%
+| spin0 | 225356 | 11%
+| spin3 | 225408 | 11%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin5 | 225360 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin5 | 225359 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297520 | 14%
+| spin3 | 225408 | 11%
+| spin4 | 225416 | 11%
+| spin2 | 225425 | 11%
+| spin1 | 225443 | 11%
+| spin0 | 225355 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin4 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin3 | 225408 | 11%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+| ipc0 | 0 | 0%
+Real time stats obtained
+
+
+Getting real time stats over 100 ticks
+| Task | Run Time | Percentage
+| stats | 858 | 0%
+| spin0 | 225356 | 11%
+| spin5 | 225360 | 11%
+| IDLE | 349216 | 17%
+| IDLE | 297518 | 14%
+| spin3 | 225416 | 11%
+| spin2 | 225472 | 11%
+| spin1 | 225396 | 11%
+| spin4 | 225408 | 11%
+| ipc0 | 0 | 0%
+| esp_timer | 0 | 0%
+| ipc1 | 0 | 0%
+Real time stats obtained

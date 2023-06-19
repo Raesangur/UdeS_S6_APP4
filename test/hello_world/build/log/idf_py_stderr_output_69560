@@ -1,0 +1,37 @@
+[0;33m--- idf_monitor on /dev/ttyUSB0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40080400: _init at ??:?
+[0m
+[0;33m0x40081018: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400d6aab: task_wdt_timeout_handling at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x400d6c32: task_wdt_isr at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40082eed: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d50fa: bon_task at /home/raesangur/github/UdeS_S6_APP4/test/hello_world/main/hello_world_main.c:21 (discriminator 1)
+[0m
+[0;33m0x40087b65: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x400d6aab: task_wdt_timeout_handling at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x400d6c32: task_wdt_isr at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40082eed: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d50fa: bon_task at /home/raesangur/github/UdeS_S6_APP4/test/hello_world/main/hello_world_main.c:21 (discriminator 1)
+[0m
+[0;33m0x40087b65: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x400d6aab: task_wdt_timeout_handling at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:461 (discriminator 3)
+[0m
+[0;33m0x400d6c32: task_wdt_isr at /home/raesangur/esp/esp-idf/components/esp_system/task_wdt/task_wdt.c:585
+[0m
+[0;33m0x40082eed: _xt_lowint1 at /home/raesangur/esp/esp-idf/components/xtensa/xtensa_vectors.S:1226
+[0m
+[0;33m0x400d50fa: bon_task at /home/raesangur/github/UdeS_S6_APP4/test/hello_world/main/hello_world_main.c:21 (discriminator 1)
+[0m
+[0;33m0x40087b65: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0m
