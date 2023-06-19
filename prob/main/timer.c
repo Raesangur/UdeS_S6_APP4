@@ -9,7 +9,7 @@ static void timer_callback(void* param)
 
 void setup_timer(uint32_t baudrate)
 {
-    const uint32_t timer_us = baudrate * 2 * 1000;
+    const uint32_t timer_us = (1.0 / baudrate) * 1000000 * 2;
 
     const esp_timer_create_args_t timer_args = {
               .callback = &timer_callback,
