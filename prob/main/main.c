@@ -18,8 +18,18 @@ void app_main()
 
     // xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
 
-    create_message("!nitam noB");
-    printf("%s\n", get_tx_data_buffer());
+    create_message("Bon matin!");
+    char* data = get_tx_data_buffer();
+    printf("%s\n", data);
+
+    if (receive_message(data) == 0)
+    {
+        printf("data is good\n");
+    }
+    else
+    {
+        printf("oh no\n");
+    }
 
     while(true)
     {
