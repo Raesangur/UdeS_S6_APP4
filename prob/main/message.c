@@ -116,8 +116,8 @@ void create_message(char* input)
     {
         tx_message[k++] = '1';
     }
-    tx_message[k++]    = '0';
-    tx_message[k] = '\0';
+    tx_message[k++]  = '0';
+    tx_message[k]    = '\0';
     tx_message_begin = tx_message;
     tx_message_end   = tx_message + k;
     tx_ready         = true;
@@ -141,13 +141,13 @@ int receive_message(char* input)
             return -1;
         }
 
-        
+
         k += 8;
         for(int i = 0; i < 8; i++)
         {
             temp[i] = input[k + i];
         }
-        if(strcmp(temp,"01111110"))
+        if(strcmp(temp, "01111110"))
         {
             return -1;
         }
@@ -226,7 +226,7 @@ int receive_message(char* input)
 
         rx_message_begin = rx_message;
         rx_message_end   = rx_message + data_size;
-    
+
         rx_ready = 1;
         return 0;
     }
