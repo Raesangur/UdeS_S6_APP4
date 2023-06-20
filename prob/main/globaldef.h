@@ -9,3 +9,4 @@
 #include <esp_timer.h>
 #include <freertos/FreeRTOS.h>
 #include <freertos/task.h>
+#include <soc/frc_timer_reg.h>

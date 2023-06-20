@@ -23,6 +23,8 @@ void app_main()
     char* data = get_tx_data_buffer();
     printf("%s\n", data);
 
+    size_t dataLenght = strlen(data);
+
     char receptionData[700] = {'\0'};
     int i = 0;
 
@@ -36,8 +38,14 @@ void app_main()
         char receivedByte = get_and_clear_reception_byte();
         if (receivedByte != '\0')
         {
+            if (i > dataLenght)
+            {
+                memset(receptionData, '\0', sizeof(receptionData));
+                i = 0;
+            }
+            
             receptionData[i++] = receivedByte;
-            printf("%s\n", receptionData);
+            printf("%s\n%s\n", data, receptionData);
             if (receive_message(data))
             {
                 char* receivedString = get_rx_data_buffer();
@@ -45,9 +53,9 @@ void app_main()
                 {
                     printf("Received: %s\n", receivedString);
                     memset(receptionData, '\0', sizeof(receptionData));
+                    i = 0;
                 }
             }
         }
-        
     }
 }

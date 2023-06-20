@@ -19,4 +19,6 @@ void setup_timer(uint32_t baudrate)
     esp_timer_handle_t timer_handler;
     ESP_ERROR_CHECK(esp_timer_create(&timer_args, &timer_handler));
     ESP_ERROR_CHECK(esp_timer_start_periodic(timer_handler, timer_us));
+
+    set_clock_us(timer_us);
 }
