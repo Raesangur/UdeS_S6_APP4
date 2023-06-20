@@ -14,20 +14,21 @@
 
 void app_main()
 {
-    setup_timer(100);
+    setup_timer(4800);
     setup_gpio();
 
     // xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
 
     create_message("Bon matin!");
     char* data = get_tx_data_buffer();
-    printf("%s\n", data);
+    printf("Sending: %s\n", data);
 
-    size_t dataLenght = strlen(data);
+    size_t dataLength = strlen(data);
 
-    char receptionData[700] = {'\0'};
-    int i = 0;
+    char* receptionData = get_rx_raw_data_buffer();
+    char* end = receptionData + dataLength;
 
+    
     while(true)
     {
         //vTaskDelay(pdMS_TO_TICKS(1));
@@ -35,27 +36,13 @@ void app_main()
         //{
         //    printf("%s", get_serial_buffer());
         //}
-        char receivedByte = get_and_clear_reception_byte();
-        if (receivedByte != '\0')
+        if (get_and_clear_reception_byte() >= end)
         {
-            if (i > dataLenght)
-            {
-                memset(receptionData, '\0', sizeof(receptionData));
-                i = 0;
-            }
-            
-            receptionData[i++] = receivedByte;
-            printf("%s\n%s\n", data, receptionData);
-            if (receive_message(data))
-            {
-                char* receivedString = get_rx_data_buffer();
-                if (receivedString)
-                {
-                    printf("Received: %s\n", receivedString);
-                    memset(receptionData, '\0', sizeof(receptionData));
-                    i = 0;
-                }
-            }
+            printf("Sent: %s\nRecv: %s\n", data, receptionData);
+            memset(receptionData, '\0', dataLength);
+            clear_raw_data_buffer();
         }
+        
+
     }
 }

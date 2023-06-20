@@ -5,6 +5,7 @@ char* tx_message_begin;
 char* tx_message_end;
 bool  tx_ready;
 
+char  rx_raw[sizeof(tx_message)];
 char  rx_message[80];
 char* rx_message_begin;
 char* rx_message_end;
@@ -266,4 +267,9 @@ char* get_rx_data_buffer()
     {
         return NULL;
     }
+}
+
+char* get_rx_raw_data_buffer()
+{
+    return rx_raw;
 }

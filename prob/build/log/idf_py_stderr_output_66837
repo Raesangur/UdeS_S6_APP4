@@ -1,0 +1,123 @@
+[0;33m--- idf_monitor on /dev/ttyUSB0 921600 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400db79b: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9405: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d52bd: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:32
+[0m
+[0;33m0x400d51f3: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d35c9: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3615: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400db79b: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9405: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d52bd: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:32
+[0m
+[0;33m0x400d51f3: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d35c9: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3615: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400db79b: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9405: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d52bd: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:32
+[0m
+[0;33m0x400d51f3: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d35c9: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3615: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400db79b: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9405: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d52bd: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:32
+[0m
+[0;33m0x400d51f3: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d35c9: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3615: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400db79b: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9405: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d52bd: transmitBit at /home/raesangur/github/UdeS_S6_APP4/prob/main/manchester.c:32
+[0m
+[0;33m0x400d51f3: timer_callback at /home/raesangur/github/UdeS_S6_APP4/prob/main/timer.c:7
+[0m
+[0;33m0x400d35c9: timer_process_alarm at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:451
+[0m
+[0;33m0x400d3615: timer_task at /home/raesangur/esp/esp-idf/components/esp_timer/src/esp_timer.c:477 (discriminator 1)
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0m

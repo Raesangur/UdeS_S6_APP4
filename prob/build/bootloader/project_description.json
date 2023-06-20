@@ -17,7 +17,7 @@
     "min_rev":            "0",
     "max_rev":            "399",
     "phy_data_partition": "",
-    "monitor_baud" :      "115200",
+    "monitor_baud" :      "921600",
     "monitor_toolprefix": "xtensa-esp32-elf-",
     "c_compiler":         "/home/raesangur/.espressif/tools/xtensa-esp32-elf-gcc/12.2.0_20230208-x86_64-unknown-linux-gnu/bin/xtensa-esp32-elf-gcc",
     "config_environment" : {
