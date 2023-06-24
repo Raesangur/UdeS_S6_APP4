@@ -19,10 +19,10 @@ void app_main()
 
     xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
     
-    char* data;
-    size_t dataLength;
-    char* receptionData;
-    char* end;
+    char* data = NULL;
+    size_t dataLength = 0;
+    char* receptionData = NULL;
+    char* end = NULL;
 
     
     while(true)
@@ -30,20 +30,22 @@ void app_main()
         vTaskDelay(pdMS_TO_TICKS(1));
         if(has_serial_reception())
         {
-            create_message(get_serial_buffer());
+            char* serialData = get_serial_buffer();
+            create_message(serialData);
             data = get_tx_data_buffer();
-            printf("Sending: %s\n", data);
+            printf("Sending: %s - %s\n", serialData, data);
             dataLength = strlen(data);
             receptionData = get_rx_raw_data_buffer();
             end = receptionData + dataLength;
         }
-        if (get_and_clear_reception_byte() >= end)
+        if (end != NULL && receptionData != NULL && data != NULL)
         {
-            printf("Sent: %s\nRecv: %s\n", data, receptionData);
-            memset(receptionData, '\0', dataLength);
-            clear_raw_data_buffer();
+            if (get_and_clear_reception_byte() >= end)
+            {
+                printf("Sent: %s\nRecv: %s\n", data, receptionData);
+                memset(receptionData, '\0', dataLength);
+                clear_raw_data_buffer();
+            }
         }
-        
-
     }
 }
