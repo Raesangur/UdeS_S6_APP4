@@ -34,17 +34,26 @@ void app_main()
             create_message(serialData);
             data = get_tx_data_buffer();
             printf("Sending: %s - %s\n", serialData, data);
+            
             dataLength = strlen(data);
             receptionData = get_rx_raw_data_buffer();
             end = receptionData + dataLength;
+
+            ready_transmission();
+
+            set_reception_flag();
         }
         if (end != NULL && receptionData != NULL && data != NULL)
         {
             if (get_and_clear_reception_byte() >= end)
             {
-                printf("Sent: %s\nRecv: %s\n", data, receptionData);
-                memset(receptionData, '\0', dataLength);
                 clear_raw_data_buffer();
+                receptionData[0] = '0';
+                printf("Sent: %s\nRecv: %s\n", data, receptionData);
+                receive_message(receptionData);
+                printf("%s\n", get_rx_data_buffer());
+                memset(receptionData, '\0', dataLength);
+                ready_raw_data_buffer();
             }
         }
     }

@@ -226,6 +226,7 @@ int receive_message(char* input)
 
         rx_message_begin = rx_message;
         rx_message_end   = rx_message + data_size;
+        *rx_message_end = '\0';
 
         rx_ready = 1;
         return 0;

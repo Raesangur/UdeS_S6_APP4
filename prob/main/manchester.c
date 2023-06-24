@@ -17,23 +17,46 @@ char receptionByte = '\0';
 uint64_t lastReceptionTime = 0;
 uint64_t ticksBetweenData = 0;
 
+bool hackPourQueCaMarche = false;
+
 
 void set_clock_us(uint64_t clock)
 {
     ticksBetweenData = clock;
 }
 
+void ready_transmission()
+{
+    transmissionComplete = false;
+}
+
 void transmitBit()
 {
+    if (transmissionComplete)
+        return;
+
+    
     if(!tx_currentDataPointer || !tx_endDataPointer)
     {
         tx_currentDataPointer   = get_tx_data_buffer();
         tx_endDataPointer       = get_tx_data_buffer_end();
+
+        /*
+        if (!hackPourQueCaMarche)
+        {
+            set_tx_gpio();
+            hackPourQueCaMarche = true;
+        }
+        else
+        {
+            clear_tx_gpio();
+            hackPourQueCaMarche = false;
+        }
+        */
         //printf("Writing message %s\n", tx_currentDataPointer);
     }
     else
     {
-        transmissionComplete = false;
         if(tx_nextByte == '0')
         {
             set_tx_gpio();
@@ -85,12 +108,20 @@ char* get_and_clear_reception_byte()
 
 void clear_raw_data_buffer()
 {
+    rx_currentDataPointer = NULL-1;
+}
+
+void ready_raw_data_buffer()
+{
     rx_currentDataPointer = NULL;
 }
 
 void receiveBit()
 {   
     if (receptionByte != '\0')
+        return;
+
+    if (rx_currentDataPointer == NULL-1)
         return;
 
     if (!rx_currentDataPointer)

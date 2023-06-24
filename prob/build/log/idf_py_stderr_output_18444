@@ -1,0 +1,45 @@
+[0;33m--- idf_monitor on /dev/ttyUSB0 921600 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400dba43: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9685: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d5234: app_main at /home/raesangur/github/UdeS_S6_APP4/prob/main/main.c:49
+[0m
+[0;33m0x400e4291: main_task at /home/raesangur/esp/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x400014fd: strlen in ROM
+[0m
+[0;33m0x4000150d: strlen in ROM
+[0m
+[0;33m0x400014fa: strlen in ROM
+[0m
+[0;33m0x400dba43: _vfprintf_r at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/vfprintf.c:1524
+[0m
+[0;33m0x400d9685: printf at /builds/idf/crosstool-NG/.build/xtensa-esp32-elf/src/newlib/newlib/libc/stdio/printf.c:56 (discriminator 5)
+[0m
+[0;33m0x400d5234: app_main at /home/raesangur/github/UdeS_S6_APP4/prob/main/main.c:49
+[0m
+[0;33m0x400e4291: main_task at /home/raesangur/esp/esp-idf/components/freertos/app_startup.c:208
+[0m
+[0;33m0x40087c75: vPortTaskWrapper at /home/raesangur/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:162
+[0m
+[0;33m0x40081000: call_start_cpu1 at /home/raesangur/esp/esp-idf/components/esp_system/port/cpu_start.c:154
+[0m
+[0m

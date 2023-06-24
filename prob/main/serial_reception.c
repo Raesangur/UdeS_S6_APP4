@@ -38,7 +38,7 @@ static void getLineInput()
         if(*bufp != '\0' && *bufp != 0xFF
            && *bufp != '\r')        // ignores null input, 0xFF, CR in CRLF
         {
-            // printf("%c", *bufp);
+            printf("%c", *bufp);
             //'enter' (EOL) handler
             if(*bufp == '\n')
             {
