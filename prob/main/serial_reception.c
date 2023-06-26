@@ -42,7 +42,7 @@ static void getLineInput()
             //'enter' (EOL) handler
             if(*bufp == '\n')
             {
-                //*bufp = '\0';
+                *bufp = '\0';
                 // printf("Received message! %s", buf);
                 return;
             }        // backspace handler

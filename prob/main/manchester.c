@@ -26,6 +26,11 @@ void set_clock_us(uint64_t clock)
     ticksBetweenData = clock;
 }
 
+uint64_t get_clock_us()
+{
+    return ticksBetweenData;
+}
+
 void ready_transmission()
 {
     transmissionComplete = false;
@@ -112,7 +117,7 @@ uint64_t get_and_clear_transmission_time()
     return total;
 }
 
-char* get_and_clear_reception_byte()
+char* get_current_data_pointer()
 {
     return rx_currentDataPointer;
 }
@@ -125,6 +130,11 @@ void clear_raw_data_buffer()
 void ready_raw_data_buffer()
 {
     rx_currentDataPointer = NULL;
+}
+
+uint64_t get_last_reception_time()
+{
+    return lastReceptionTime;
 }
 
 void receiveBit()
