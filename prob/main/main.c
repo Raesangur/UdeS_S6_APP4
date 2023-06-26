@@ -24,6 +24,7 @@ void app_main()
     char* receptionData = NULL;
     char* end = NULL;
 
+    bool started_transmission = false;
     
     while(true)
     {
@@ -33,7 +34,7 @@ void app_main()
             char* serialData = get_serial_buffer();
             create_message(serialData);
             data = get_tx_data_buffer();
-            printf("Sending: %s - %s\n", serialData, data);
+            printf("Sending: %s - %s\nTotal Encoding Time: %lld ticks\n", serialData, data, get_and_clear_encoding_time());
             
             dataLength = strlen(data);
             receptionData = get_rx_raw_data_buffer();
@@ -42,6 +43,12 @@ void app_main()
             ready_transmission();
 
             set_reception_flag();
+            started_transmission = true;
+        }
+        if (is_transmission_complete() && started_transmission)
+        {
+            printf("Total Transmission Time: %lld ticks\n", get_and_clear_transmission_time());
+            started_transmission = false;
         }
         if (end != NULL && receptionData != NULL && data != NULL)
         {
@@ -51,7 +58,7 @@ void app_main()
                 receptionData[0] = '0';
                 printf("Sent: %s\nRecv: %s\n", data, receptionData);
                 receive_message(receptionData);
-                printf("%s\n", get_rx_data_buffer());
+                printf("%s\nTotal Reception Time: %lld ticks\nTotal Decoding Time: %lld ticks\n", get_rx_data_buffer(), get_and_clear_reception_time(), get_and_clear_decoding_time());
                 memset(receptionData, '\0', dataLength);
                 ready_raw_data_buffer();
             }

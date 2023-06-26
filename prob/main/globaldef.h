@@ -1,6 +1,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <string.h>
+#include <sys/time.h>
 
 #include <driver/gpio.h>
 #include <esp_log.h>

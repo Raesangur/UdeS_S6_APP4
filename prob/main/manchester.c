@@ -17,7 +17,8 @@ char receptionByte = '\0';
 uint64_t lastReceptionTime = 0;
 uint64_t ticksBetweenData = 0;
 
-bool hackPourQueCaMarche = false;
+uint64_t totalTimeRx = 0;
+uint64_t totalTimeTx = 0;
 
 
 void set_clock_us(uint64_t clock)
@@ -30,29 +31,22 @@ void ready_transmission()
     transmissionComplete = false;
 }
 
+bool is_transmission_complete()
+{
+    return transmissionComplete;
+}
+
 void transmitBit()
 {
     if (transmissionComplete)
         return;
 
+    uint64_t startTime = xthal_get_ccount();
     
     if(!tx_currentDataPointer || !tx_endDataPointer)
     {
         tx_currentDataPointer   = get_tx_data_buffer();
         tx_endDataPointer       = get_tx_data_buffer_end();
-
-        /*
-        if (!hackPourQueCaMarche)
-        {
-            set_tx_gpio();
-            hackPourQueCaMarche = true;
-        }
-        else
-        {
-            clear_tx_gpio();
-            hackPourQueCaMarche = false;
-        }
-        */
         //printf("Writing message %s\n", tx_currentDataPointer);
     }
     else
@@ -98,8 +92,25 @@ void transmitBit()
             }
         }
     }
+
+    totalTimeTx =+ xthal_get_ccount() - startTime;
 }
 
+uint64_t get_and_clear_reception_time()
+{
+    uint64_t total = totalTimeRx;
+    totalTimeRx = 0;
+
+    return total;
+}
+
+uint64_t get_and_clear_transmission_time()
+{
+    uint64_t total = totalTimeTx;
+    totalTimeTx = 0;
+
+    return total;
+}
 
 char* get_and_clear_reception_byte()
 {
@@ -129,6 +140,7 @@ void receiveBit()
 
     
     uint64_t currentTime = esp_timer_get_time();
+    uint64_t startTime = xthal_get_ccount();
     if (currentTime - lastReceptionTime < (ticksBetweenData * 1.5) && !firstRead)
     {
         rx_previousByte = '\0';
@@ -157,4 +169,6 @@ void receiveBit()
             rx_currentDataPointer++;
         }
     }
+
+    totalTimeRx =+ xthal_get_ccount() - startTime;
 }

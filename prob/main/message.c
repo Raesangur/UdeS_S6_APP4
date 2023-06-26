@@ -4,12 +4,14 @@ char  tx_message[696];
 char* tx_message_begin;
 char* tx_message_end;
 bool  tx_ready;
+uint64_t tx_totalTime;
 
 char  rx_raw[sizeof(tx_message)];
 char  rx_message[80];
 char* rx_message_begin;
 char* rx_message_end;
 bool  rx_ready;
+uint64_t rx_totalTime;
 
 
 #define CRC16 0x8005
@@ -50,6 +52,8 @@ static uint16_t gen_crc16(const char* data, uint16_t size)
 
 void create_message(char* input)
 {
+    uint64_t startTime = xthal_get_ccount();
+    
     int     k         = 0;
     uint8_t data_size = strlen(input);
     char    data[640];
@@ -121,10 +125,14 @@ void create_message(char* input)
     tx_message_begin = tx_message;
     tx_message_end   = tx_message + k;
     tx_ready         = true;
+
+    tx_totalTime =+ xthal_get_ccount() - startTime;
 }
 
 int receive_message(char* input)
 {
+    uint64_t startTime = xthal_get_ccount();
+
     int     k            = 0;
     uint8_t message_size = strlen(input);
     while(k < message_size)
@@ -229,6 +237,8 @@ int receive_message(char* input)
         *rx_message_end = '\0';
 
         rx_ready = 1;
+
+        rx_totalTime =+ xthal_get_ccount() - startTime;
         return 0;
     }
     return -1;
@@ -273,4 +283,21 @@ char* get_rx_data_buffer()
 char* get_rx_raw_data_buffer()
 {
     return rx_raw;
+}
+
+
+uint64_t get_and_clear_decoding_time()
+{
+    uint64_t total = rx_totalTime;
+    rx_totalTime = 0;
+
+    return total;
+}
+
+uint64_t get_and_clear_encoding_time()
+{
+    uint64_t total = tx_totalTime;
+    tx_totalTime = 0;
+
+    return total;
 }
