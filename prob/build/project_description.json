@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "APP4",
-    "project_version":    "cb089d1-dirty",
+    "project_version":    "b459098-dirty",
     "project_path":       "/home/raesangur/github/UdeS_S6_APP4/prob",
     "idf_path":           "/home/raesangur/esp/esp-idf",
     "build_dir":          "/home/raesangur/github/UdeS_S6_APP4/prob/build",

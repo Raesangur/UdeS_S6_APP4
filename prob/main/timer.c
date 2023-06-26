@@ -5,7 +5,7 @@
 static void timer_callback(void* param)
 {
     transmitBit();
-    //receiveBit();
+    // receiveBit();
 }
 
 

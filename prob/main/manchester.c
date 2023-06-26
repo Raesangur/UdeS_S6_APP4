@@ -11,11 +11,11 @@ char  rx_previousByte       = '\0';
 char* rx_currentDataPointer = NULL;
 
 bool transmissionComplete = true;
-bool firstRead = true;
-char receptionByte = '\0';
+bool firstRead            = true;
+char receptionByte        = '\0';
 
 uint64_t lastReceptionTime = 0;
-uint64_t ticksBetweenData = 0;
+uint64_t ticksBetweenData  = 0;
 
 uint64_t totalTimeRx = 0;
 uint64_t totalTimeTx = 0;
@@ -43,16 +43,16 @@ bool is_transmission_complete()
 
 void transmitBit()
 {
-    if (transmissionComplete)
+    if(transmissionComplete)
         return;
 
     uint64_t startTime = xthal_get_ccount();
-    
+
     if(!tx_currentDataPointer || !tx_endDataPointer)
     {
-        tx_currentDataPointer   = get_tx_data_buffer();
-        tx_endDataPointer       = get_tx_data_buffer_end();
-        //printf("Writing message %s\n", tx_currentDataPointer);
+        tx_currentDataPointer = get_tx_data_buffer();
+        tx_endDataPointer     = get_tx_data_buffer_end();
+        // printf("Writing message %s\n", tx_currentDataPointer);
     }
     else
     {
@@ -70,22 +70,22 @@ void transmitBit()
         {
             if(tx_currentDataPointer == tx_endDataPointer)
             {
-                tx_currentDataPointer   = NULL;
-                tx_endDataPointer       = NULL;
-                transmissionComplete = true;
-                //printf("Transmission Complete!\n");
+                tx_currentDataPointer = NULL;
+                tx_endDataPointer     = NULL;
+                transmissionComplete  = true;
+                // printf("Transmission Complete!\n");
             }
             else
             {
                 if(*tx_currentDataPointer == '0')
                 {
-                   // printf("sending 0\n");
+                    // printf("sending 0\n");
                     set_tx_gpio();
                     tx_nextByte = '1';
                 }
                 else if(*tx_currentDataPointer == '1')
                 {
-                    //printf("sending 1\n");
+                    // printf("sending 1\n");
                     clear_tx_gpio();
                     tx_nextByte = '0';
                 }
@@ -98,13 +98,13 @@ void transmitBit()
         }
     }
 
-    totalTimeTx =+ xthal_get_ccount() - startTime;
+    totalTimeTx = +xthal_get_ccount() - startTime;
 }
 
 uint64_t get_and_clear_reception_time()
 {
     uint64_t total = totalTimeRx;
-    totalTimeRx = 0;
+    totalTimeRx    = 0;
 
     return total;
 }
@@ -112,7 +112,7 @@ uint64_t get_and_clear_reception_time()
 uint64_t get_and_clear_transmission_time()
 {
     uint64_t total = totalTimeTx;
-    totalTimeTx = 0;
+    totalTimeTx    = 0;
 
     return total;
 }
@@ -124,7 +124,7 @@ char* get_current_data_pointer()
 
 void clear_raw_data_buffer()
 {
-    rx_currentDataPointer = NULL-1;
+    rx_currentDataPointer = NULL - 1;
 }
 
 void ready_raw_data_buffer()
@@ -138,47 +138,47 @@ uint64_t get_last_reception_time()
 }
 
 void receiveBit()
-{   
-    if (receptionByte != '\0')
+{
+    if(receptionByte != '\0')
         return;
 
-    if (rx_currentDataPointer == NULL-1)
+    if(rx_currentDataPointer == NULL - 1)
         return;
 
-    if (!rx_currentDataPointer)
+    if(!rx_currentDataPointer)
         rx_currentDataPointer = get_rx_raw_data_buffer();
 
-    
+
     uint64_t currentTime = esp_timer_get_time();
-    uint64_t startTime = xthal_get_ccount();
-    if (currentTime - lastReceptionTime < (ticksBetweenData * 1.5) && !firstRead)
+    uint64_t startTime   = xthal_get_ccount();
+    if(currentTime - lastReceptionTime < (ticksBetweenData * 1.5) && !firstRead)
     {
         rx_previousByte = '\0';
     }
     lastReceptionTime = currentTime;
-    
-    if (rx_previousByte != '0' && rx_previousByte != '1')
+
+    if(rx_previousByte != '0' && rx_previousByte != '1')
     {
         rx_previousByte = read_rx_gpio() ? '1' : '0';
-        firstRead = true;
+        firstRead       = true;
     }
     else
     {
         char currentByte = read_rx_gpio() ? '1' : '0';
-        firstRead = false;
-        if (rx_previousByte == '0' && currentByte == '1')
+        firstRead        = false;
+        if(rx_previousByte == '0' && currentByte == '1')
         {
-            rx_previousByte = '1';
+            rx_previousByte        = '1';
             *rx_currentDataPointer = rx_previousByte;
             rx_currentDataPointer++;
         }
-        else if (rx_previousByte == '1' && currentByte == '0')
+        else if(rx_previousByte == '1' && currentByte == '0')
         {
-            rx_previousByte = '0';
+            rx_previousByte        = '0';
             *rx_currentDataPointer = rx_previousByte;
             rx_currentDataPointer++;
         }
     }
 
-    totalTimeRx =+ xthal_get_ccount() - startTime;
+    totalTimeRx = +xthal_get_ccount() - startTime;
 }

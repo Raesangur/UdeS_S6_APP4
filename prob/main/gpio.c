@@ -5,7 +5,7 @@
 uint16_t tx_pin = 23;
 uint16_t rx_pin = 22;
 
-static void IRAM_ATTR gpio_interrupt_handler(void *args)
+static void IRAM_ATTR gpio_interrupt_handler(void* args)
 {
     receiveBit();
 }
@@ -13,10 +13,10 @@ static void IRAM_ATTR gpio_interrupt_handler(void *args)
 
 void setup_gpio()
 {
-    //esp_rom_gpio_pad_select_gpio(tx_pin);
+    // esp_rom_gpio_pad_select_gpio(tx_pin);
     gpio_set_direction(tx_pin, GPIO_MODE_OUTPUT);
 
-    //esp_rom_gpio_pad_select_gpio(rx_pin);
+    // esp_rom_gpio_pad_select_gpio(rx_pin);
     gpio_set_direction(rx_pin, GPIO_MODE_INPUT);
     gpio_set_intr_type(rx_pin, GPIO_INTR_ANYEDGE);
     gpio_pulldown_en(rx_pin);
