@@ -3,6 +3,13 @@
 #include "message.h"
 #include "manchester.h"
 
+static bool addErrorToMessage = false;
+
+void add_error_to_message()
+{
+    addErrorToMessage = true;
+}
+
 void transmission_task(void* pvParameter)
 {
     bool started_transmission = false;
@@ -16,11 +23,12 @@ void transmission_task(void* pvParameter)
             char* data = get_tx_data_buffer();
             printf("Sending: %s - %s\nTotal Encoding Time: %lld ticks\n", serialData, data, get_and_clear_encoding_time());
 
-            /*
-            dataLength = strlen(data);
-            receptionData = get_rx_raw_data_buffer();
-            end = receptionData + dataLength;
-            */
+            if (addErrorToMessage)
+            {
+                printf("Adding error to message\n");
+                data[16] = data[16] == '0' ? '1' : '0';
+            }
+
 
             ready_transmission();
 

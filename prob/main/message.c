@@ -218,6 +218,7 @@ int receive_message(char* input)
         {
             if(input[i + k] != crc_sequence[i])
             {
+                printf("Erreur de CRC!\n");
                 return -1;
             }
         }

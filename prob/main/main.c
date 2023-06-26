@@ -21,55 +21,19 @@ void app_main()
     xTaskCreate(&reception_task, "Serial Reception", 2048, NULL, 5, NULL);
     xTaskCreate(&transmission_task, "Transmission Task", 2048, NULL, 5, NULL);
 
-
     char* receptionData = get_rx_raw_data_buffer();
-    /*
-    char* data = NULL;
-    size_t dataLength = 0;
-    char* receptionData = NULL;
-    char* end = NULL;
 
-    bool started_transmission = false;
-    */
+
+    // Uncomment this line to add an error after CRC computation when sending the data
+    //add_error_to_message();
     
     while(true)
     {
         vTaskDelay(pdMS_TO_TICKS(1));
-        /*
-        if(has_serial_reception())
-        {
-            char* serialData = get_serial_buffer();
-            create_message(serialData);
-            data = get_tx_data_buffer();
-            printf("Sending: %s - %s\nTotal Encoding Time: %lld ticks\n", serialData, data, get_and_clear_encoding_time());
-            
-            dataLength = strlen(data);
-            receptionData = get_rx_raw_data_buffer();
-            end = receptionData + dataLength;
-
-            ready_transmission();
-
-            set_reception_flag();
-            started_transmission = true;
-        }
-        if (is_transmission_complete() && started_transmission)
-        {
-            printf("Total Transmission Time: %lld ticks\n", get_and_clear_transmission_time());
-            started_transmission = false;
-        }
-        */
-        /*
-        if (end != NULL && receptionData != NULL && data != NULL)
-        {
-            if (get_current_data_pointer() >= end)
-            {
-        */
 
         if(esp_timer_get_time() - get_last_reception_time() > 100 * get_clock_us() && get_current_data_pointer() != NULL && get_current_data_pointer() != (NULL - 1))
         {
-            //printf("Last Reception Time: %lld, Now: %lld, Clock: %lld\n", get_last_reception_time(), esp_timer_get_time(), get_clock_us());
             receptionData[0] = '0';
-            //printf("Recv: %s\n", receptionData);
             if (!receive_message(receptionData))
             {
                 printf("Recv: %s\n", receptionData);
@@ -80,9 +44,5 @@ void app_main()
                 ready_raw_data_buffer();
             }
         }
-                /*
-            }
-        }
-        */
     }
 }
